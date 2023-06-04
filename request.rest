@@ -1,0 +1,388 @@
+//Create User
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "name": "naruto",
+    "email": "naruto@gmail.com",
+    "password": "12345",
+    "confPassword": "12345",
+    "role": "user"
+}
+
+###
+// get all user
+GET http://localhost:5000/users
+###
+// get count
+GET http://localhost:5000/countwarga
+
+###
+//get single user
+GET http://localhost:5000/users/0cdab5fd-6b1f-4e4a-9124-5f2a4b8fd6f0
+
+###
+// update user
+PATCH http://localhost:5000/users/0cdab5fd-6b1f-4e4a-9124-5f2a4b8fd6f0
+Content-Type: application/json
+
+{
+    "name": "khoirulaji",
+    "email": "khoirulaji@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "admin"
+}
+
+###
+// delete user
+DELETE  http://localhost:5000/users/9c5db904-0639-4afc-9196-8e20b1f1feb2
+
+###
+//login user
+POST http://localhost:5000/login/
+Content-Type: application/json
+
+{
+    "email": "khoirulaji@gmail.com",
+    "password": "12345"
+}
+
+
+###
+POST http://localhost:5000/login/
+Content-Type: application/json
+
+{
+    "email": "naruto@gmail.com",
+    "password": "12345"
+}
+
+###
+//lOGIN SEBAGAI?
+GET http://localhost:5000/me
+
+###
+//logout
+DELETE http://localhost:5000/logout
+
+
+###
+//get all products
+GET http://localhost:5000/products
+
+
+###
+//Create product
+POST http://localhost:5000/products
+Content-Type: application/json
+
+{
+    "name": "Product 6",
+    "price": 972
+}
+
+###
+//get single product
+GET http://localhost:5000/products/5680b1b8-5b72-4246-a2de-2a51162d8f25
+
+###
+//update product
+PATCH http://localhost:5000/products/6ef6b5c2-b638-4dbe-8af2-4227c6748a92
+Content-Type: application/json
+
+{
+    "name": "Product Update 1",
+    "price": 9700
+}
+
+###
+//delete product
+DELETE http://localhost:5000/products/ab8a949b-5837-44a2-94db-8874e76c9af9
+
+
+
+###
+// AGENDA
+GET http://localhost:5000/agenda
+
+###
+//AGENDA LIMIT
+GET http://localhost:5000/agenda-limit
+
+###
+// CREATE AGENDA
+POST http://localhost:5000/agenda
+Content-Type: application/json
+
+{
+    "judul": "Judul Agenda 6",
+    "waktu": "Tanggal 23 Maret jam 08:00 - Selesai",
+    "lokasi": "Balai Desa Kepubrubuh 6"
+}
+
+###
+// Get Agenda By ID
+GET http://localhost:5000/agenda/94dc84de-28af-425c-84e3-5881251bc986
+
+###
+// Update Agenda
+PATCH http://localhost:5000/agenda/94dc84de-28af-425c-84e3-5881251bc986
+Content-Type: application/json
+
+{
+    "judul": "Judul Agenda 2 updated",
+    "waktu": "Tanggal 22 Maret jam 08:00 - Selesai updated",
+    "lokasi": "Balai Desa Kepubrubuh 2 updated",
+    "gambar": "gambar 2 updated"
+}
+
+###
+// Delete Agenda
+DELETE  http://localhost:5000/agenda/94dc84de-28af-425c-84e3-5881251bc986
+
+
+
+###
+// ARTIKEL
+GET http://localhost:5000/artikel
+
+###
+//Aktif ARTIKEL
+PATCH http://localhost:5000/artikel-aktif/cff5c34f-8b1a-4827-bfd6-af3f6810fe3a
+
+###
+// ARTIKEL LIMIT
+GET http://localhost:5000/artikel-limit
+
+###
+// CREATE ARTIKEL
+POST http://localhost:5000/artikel
+Content-Type: application/json
+
+{
+    "judul": "Judul Artikel 2",
+    "isi": "Ini adalah isi dari artikel 2",
+    "gambar": "gambar 2",
+    "aktif": "2"
+}
+
+###
+// Get Artikel By ID
+GET http://localhost:5000/artikel/a796a343-bc5a-4107-aafe-04b8d4938bd3
+
+###
+// Update Artikel
+PATCH http://localhost:5000/artikel/699ddcc8-a2b6-4494-b902-b938a0902b81
+Content-Type: application/json
+
+{
+    "judul": "Judul Artikel 2 updated",
+    "isi": "Ini adalah isi dari artikel 2 updated",
+    "gambar": "gambar 2 updated",
+    "aktif": "2"
+}
+
+###
+// Delete Artikel
+DELETE  http://localhost:5000/artikel/699ddcc8-a2b6-4494-b902-b938a0902b81
+
+###
+// GALERI
+GET http://localhost:5000/galeri/d1ba454f-c761-420a-b0f1-93c9d8949c34
+
+
+###
+// FASILITAS
+GET http://localhost:5000/fasilitas
+
+###
+// CREATE FASILITAS
+POST http://localhost:5000/fasilitas
+Content-Type: application/json
+
+{
+    "nama": "Fasilitas 5",
+    "waktu": "Tanggal 24 Mei 2023",
+    "nominal": "RP. 123.000.000",
+    "gambar": "Gambar 5",
+    "alamat": "Jalan Sunan Giri"
+}
+
+###
+// GET FASILITAS BY ID
+GET http://localhost:5000/fasilitas/1288c736-e176-44ff-8941-343d9b991ac0
+
+
+###
+// UPDATE ARTIKEL
+PATCH http://localhost:5000/fasilitas/1288c736-e176-44ff-8941-343d9b991ac0
+Content-Type: application/json
+
+{
+   "nama": "Fasilitas 2 updated",
+    "waktu": "Tanggal 25 Mei 2023 updated",
+    "nominal": "RP. 200.500.000",
+    "gambar": "Gambar 2 updated",
+    "alamat": "Jalan Sunan Ampel updated"
+}
+
+
+###
+// DELETE FASILITAS
+DELETE  http://localhost:5000/fasilitas/1288c736-e176-44ff-8941-343d9b991ac0
+
+
+
+###
+// PENGUMUMAN
+GET http://localhost:5000/pengumuman
+
+###
+// PENGUMUMAN LIMIT
+GET http://localhost:5000/pengumuman-limit
+
+###
+// CREATE PENGUMUMAN
+POST http://localhost:5000/pengumuman
+Content-Type: application/json
+
+{
+    "judul": "Judul Pengumuman Sekian",
+    "isi": "Ini adalah isi dari pengumuman sekian",
+    "gambar": "gambar sekian",
+    "aktif": "1"
+}
+
+
+###
+// GET PENGUMUMAN BY ID
+GET http://localhost:5000/pengumuman/4bd627e8-0284-479d-a87c-d7404a03aaf4
+
+
+###
+// UPDATE PENGUMUMAN
+PATCH http://localhost:5000/pengumuman/4bd627e8-0284-479d-a87c-d7404a03aaf4
+Content-Type: application/json
+
+{
+    "judul": "Judul Pengumuman Sekian Updated",
+    "isi": "Ini adalah isi dari pengumuman sekian Updated",
+    "gambar": "gambar sekian updated",
+    "aktif": "1"
+}
+
+###
+// DELETE PENGUMUMAN
+DELETE  http://localhost:5000/pengumuman/4bd627e8-0284-479d-a87c-d7404a03aaf4
+
+
+###
+// WARGA
+GET http://localhost:5000/warga
+
+###
+//Search WARGA
+GET http://localhost:5000/warga?search_query=huri&page=0&limit=10
+
+###
+// CREATE WARGA
+POST http://localhost:5000/warga
+Content-Type: application/json
+
+{
+    "nama_lengkap": "dila",
+    "nik": "3502102405011114",
+    "nokk": "124214912874222",
+    "kelamin": "Perempuan",
+    "alamat": "Jalan giri",
+    "aktif": "Iya"
+}
+
+
+###
+// GET WARGA BY ID
+GET http://localhost:5000/warga/8b1def78-b271-49bb-85b8-39ec029ab283
+
+
+###
+// UPDATE WARGA
+PATCH http://localhost:5000/warga/1d0aa958-3504-42ca-b165-8fcca205089b
+Content-Type: application/json
+
+{
+    "nama_lengkap": "Khoirul Mashuri",
+    "nik": "3502102405011113",
+    "nokk": "124214912874221",
+    "kelamin": "Laki laki1",
+    "alamat": "Jalan Sunan Kali Jaga updated",
+    "aktif": "Tidak"
+}
+
+###
+// DELETE WARGA
+DELETE  http://localhost:5000/warga/563cf820-56d3-4611-89f7-ecf0587ed2c8
+
+
+
+###
+// get unduhan
+GET http://localhost:5000/unduhan
+
+###
+// CREATE PERMOHONAN
+POST http://localhost:5000/permohonan
+Content-Type: application/json
+
+{
+    "nik": "3502104602570001",
+    "pemohon": "Sringatin",
+    "surat": "Surat Keterangan Tidak Mampu"
+}
+
+###
+// CREATE PERMOHONAN
+POST http://localhost:5000/surat-tidak-mampu
+Content-Type: application/json
+
+{
+    "pemohon" : "Aji Khoirul",
+    "n_bapak" : "Suryono",
+    "nik_bapak": "0821781812",
+    "t_bapak" : "Ponorogo, 20 Mei 1970",
+    "pekerjaan_bapak" : "Wiraswasta",
+    "agama_bapak" : "Islam",
+    "alamat_bapak" : "Jl. Sunan Gunung Jati",
+    "n_ibu" : "Siti Nurul Kholisah",
+    "nik_ibu": "19286189268",
+    "t_ibu" : "Ponorogo, 24 Desember 1972",
+    "pekerjaan_ibu" : "Petani",
+    "agama_ibu" : "Islam",
+    "alamat_ibu" : "Jl. Sunan Gunung Jati",
+    "keperluan" : "Beasiswa",
+    "nik": "81238192739",
+    "surat": "Surat Keterangan Tidak Mampu",
+    "wa": "102707310273"
+}
+
+###
+// get permohonan id
+GET http://localhost:5000/permohonan/359c11a4-72d4-4bc8-b0d0-488918e7da73
+
+###
+// get permohonan aktif
+PATCH http://localhost:5000/permohonan-aktif/359c11a4-72d4-4bc8-b0d0-488918e7da73
+
+
+###
+// get surat tidak mampu id
+GET http://localhost:5000/surat-tidak-mampu/9def4623-f61b-41a3-8cc2-497b9ea197d9
+
+###
+// get surat tidak mampu aktif
+PATCH http://localhost:5000/surat-tidak-mampu-aktif/21ffa6fb-7c7d-4e39-8c74-1e09a76143bf
+
+
+###
+// get surat tidak mampu count
+GET http://localhost:5000/count-surat-tidak-mampu
