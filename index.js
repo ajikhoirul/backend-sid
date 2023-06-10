@@ -25,8 +25,13 @@ import TentangDesaRoute from "./routes/TentangDesaRoute.js";
 import VideoRoute from "./routes/VideoRoute.js";
 import ProfilDesaRoute from "./routes/ProfilDesaRoute.js";
 import StrukturDesaRoute from "./routes/StrukturDesaRoute.js";
+import fs from "fs";
+import https from "https";
 
 dotenv.config();
+
+const key = fs.readFileSync("private.key");
+const cert = fs.readFileSync("certificate.crt");
 
 const app = express();
 
@@ -39,6 +44,11 @@ const store = new sessionStore({
 //   await db.sync();
 // })();
 
+const cred = {
+  key,
+  cert
+}
+
 app.use(
   session({
     secret: process.env.SESS_SECRET,
@@ -46,7 +56,8 @@ app.use(
     saveUninitialized: true,
     store: store,
     cookie: {
-      secure: "auto",
+      sameSite: "none",
+      secure: true
     },
   })
 );
@@ -95,3 +106,6 @@ app.use(express.static("public"));
 app.listen(process.env.APP_PORT, () => {
   console.log("Server up running...");
 });
+
+const httpsServer = https.createServer(cred, app)
+httpsServer.listen(8443)
